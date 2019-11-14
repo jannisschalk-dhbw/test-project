@@ -12,6 +12,11 @@ class AddNewEntry {
     async onShow() {
         let form = await this._importNewEntryForm();
         let data = this._loadData();
+        
+        //onChangeListener
+        form.querySelector('#selectItem').addEventListener("change", (event) => {
+            alert(event.target.value);
+        });
 
         form.querySelector('.save').addEventListener('click', () => {
             var newObj = { 
